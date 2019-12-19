@@ -58,11 +58,11 @@ _deny = msg {
 }
 
 # Ingress resources will no longer be served from extensions/v1beta1 in v1.20. Migrate use to the networking.k8s.io/v1beta1 API, available since v1.14.
-_warn = msg {
-  input.apiVersion == "extensions/v1beta1"
-  input.kind == "Ingress"
-  msg := sprintf("%s/%s: API extensions/v1beta1 for Ingress is deprecated, use networking.k8s.io/v1beta1 instead.", [input.kind, input.metadata.name])
-}
+#_warn = msg {
+#  input.apiVersion == "extensions/v1beta1"
+#  input.kind == "Ingress"
+#  msg := sprintf("%s/%s: API extensions/v1beta1 for Ingress is deprecated, use networking.k8s.io/v1beta1 instead.", [input.kind, input.metadata.name])
+#}
 
 # PriorityClass resources will no longer be served from scheduling.k8s.io/v1beta1 and scheduling.k8s.io/v1alpha1 in v1.17.
 _warn = msg {
